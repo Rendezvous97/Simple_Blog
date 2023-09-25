@@ -10,8 +10,10 @@ class PostForm(forms.ModelForm):
         fields = ('author', 'title', 'text')
 
         widgets = {
-            'title': forms.TextInput(attrs={'class':'textinputclass'}),
-            'text': forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'}),
+            'author': forms.Select(attrs={'style': 'margin-bottom: 5px;'}),
+            'title': forms.TextInput(attrs={'class':'textinputclass', 'style': 'margin-bottom: 5px;'}),
+            'text': forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent border',
+                                          'style': 'margin-bottom: 20px; min-height: 100px; padding: 10px; font-size: 15px;'}),
         }
 
 

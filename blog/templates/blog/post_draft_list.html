@@ -5,9 +5,9 @@
         <br>
         {% for draft in draft_list %}
         <div class="px-4 pt-4 pb-2 mb-4 shadow-4 rounded-3 centerstage border">
-            <p class="listdateblog">,<i>created {{ draft.date|date:'d-m-Y' }}</i></p>
-            <h1 class="listtitleblog loader"><a href="{% url 'blog:post_detail' pk=draft.pk %}">{{ draft.title }}</a></h1>
-            <p class="postcontent my-3">{{ draft.text|truncatechars:200 }}</p>
+            <p class="listdateblog"><i>created {{ draft.date|date:'d-m-Y' }}</i></p>
+            <h1 class="listtitleblog loader"><a href="{% url 'blog:post_detail' pk=draft.pk %}">{{ draft.title|safe }}</a></h1>
+            <p class="postcontent my-3">{{ draft.text|truncatechars:200|safe }}</p>
         </div>
         {% endfor %}
     </div>

@@ -2,7 +2,7 @@
 
 {% block body_block %}
     <div class="container my-5 px-4 pt-4 pb-4 mb-4 shadow-4 rounded-3 centerstage border" style="width:60%;">
-        <h1>New Post</h1>
+        <h1 class="mb-4">New Post</h1>
         <form class="post-form" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
