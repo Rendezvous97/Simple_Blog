@@ -1,11 +1,14 @@
 {% extends 'blog/base.html' %}
 {% block body_block %}
-    {% for draft in draft_list %}
-    <div class="POST">
-        <p class="date">created {{ draft.date|date:'d-m-Y' }}</p>
-        <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ draft.title }}</a></h1>
-        <p>{{ draft.text|truncatechars:200 }}</p>
+    <div class="container my-5" style="width:60%;">
+        <h1 class="mx-4">All Drafts</h1>
+        <br>
+        {% for draft in draft_list %}
+        <div class="px-4 pt-4 pb-2 mb-4 shadow-4 rounded-3 centerstage border">
+            <p class="listdateblog">,<i>created {{ draft.date|date:'d-m-Y' }}</i></p>
+            <h1 class="listtitleblog loader"><a href="{% url 'blog:post_detail' pk=draft.pk %}">{{ draft.title }}</a></h1>
+            <p class="postcontent my-3">{{ draft.text|truncatechars:200 }}</p>
+        </div>
+        {% endfor %}
     </div>
-
-    {% endfor %}
 {% endblock %}

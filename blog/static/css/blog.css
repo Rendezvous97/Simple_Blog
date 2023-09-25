@@ -10,17 +10,12 @@
     font-size: 22px;
 }
 
-.loader {
-filter:hue-rotate(0deg);
-color:linear-gradient(45deg,#0f8,#08f);
-animation:hue 10000ms infinite linear;
-
-}
-
 
 .centerstage{
     margin-left: auto;
     margin-right: auto;
+    /* max-width: 500px; */
+    /* margin: 0 auto; */
 }
 
 
@@ -33,6 +28,14 @@ animation:hue 10000ms infinite linear;
     font-size: 2em;
     text-align: center;
 }
+
+
+.listtitleblog{
+    font-family: 'Mooli', sans-serif;
+    font-size: 2em;
+    text-align: left;
+}
+
 
 .postcontent{
     font-family: 'Montserrat';
@@ -47,7 +50,26 @@ animation:hue 10000ms infinite linear;
 }
 
 
+.listdateblog{
+    font-family: 'Montserrat';
+    font-size: 0.8em;
+}
 
+
+.comments{
+    font-family: 'Montserrat';
+    font-size: 1em;
+}
+
+
+.loader {
+    filter:hue-rotate(0deg);
+    color:linear-gradient(45deg,#0f8,#08f);
+    animation:hue 10000ms infinite linear;
+    
+    }
+
+    
 /* Color change */
 
 @keyframes spinify {

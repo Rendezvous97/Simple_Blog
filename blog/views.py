@@ -77,6 +77,8 @@ class DraftListView(LoginRequiredMixin, ListView):
     # Below use methods from mixin class
     login_url = 'login/'
     redirect_field_name = 'blog/post_draft_list.html'
+    context_object_name = "draft_list"
+    template_name = "blog/post_draft_list.html"
 
     def get_queryset(self):
         # Field Queries Used
@@ -111,7 +113,7 @@ def add_comment_to_post(request, pk):
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
-    return redirect(request, 'post_detail.comment.post.pk')
+    return redirect('blog:post_detail',  pk=pk)
 
 
 @login_required

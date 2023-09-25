@@ -1,16 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block body_block %}
-    <div class="p-5 m-5 shadow-4 rounded-3 centerstage" style="background-color: hsl(0, 0%, 94%);">
+    <div class="container my-5" style="width:60%;">
+        <h1 class="mx-4">All Posts</h1>
+        <br>
+
         {% for post in post_list %}
-        <div class="post">
-            <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        </div>
-        <div class="date">
-            <p>Published on: {{ post.published_date|date:"D M Y"}}</p>
-        </div>
-        <div class="comments">
-            <p><a href="{% url 'blog:post_detail' pk=post.pk %}"></a>{{ post.approve_comments.count }} comments</p>
+        <div class="px-4 pt-4 pb-2 mb-4 shadow-4 rounded-3 centerstage border" style="background-color:hsl(0, 0%, 94%);">
+            <div>
+                <h3 class="listtitleblog loader"><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            </div>
+            <div>
+                <p class="listdateblog"><i>Published on: {{ post.published_date|date:"D M Y"}}</i></p>
+            </div>
+            <div class="comments">
+                <p><a href="{% url 'blog:post_detail' pk=post.pk %}"></a>{{ post.approve_comments.count }} comments</p>
+            </div>
         </div>
         {% endfor %}
     </div>
